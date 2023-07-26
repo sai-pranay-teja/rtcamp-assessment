@@ -1,5 +1,5 @@
-#source status.sh
+source status.sh
 
 docker --version
-#status_check
+status_check
 
