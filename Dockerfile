@@ -1,2 +1,2 @@
 FROM nginx
-COPY install.sh /
+COPY files/default.conf /etc/nginx/conf.d/default.conf
