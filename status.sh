@@ -6,5 +6,6 @@ status_check () {
     else
       echo Installing tools
       docker_setup
+      docker_compose_setup
     fi
 }

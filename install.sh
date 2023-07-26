@@ -22,3 +22,11 @@ docker_setup () {
     systemctl start docker
 
 }
+
+docker_compose_setup () {
+    curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o docker-compose
+
+    mv docker-compose /usr/local/bin && sudo chmod +x /usr/local/bin/docker-compose
+    
+    ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose 
+}
