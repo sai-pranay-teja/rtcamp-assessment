@@ -6,3 +6,4 @@ RUN yum install epel-release
 RUN yum module enable php:remi-8.1
 RUN yum install php
 COPY files/default.conf /etc/nginx/conf.d/default.conf
+
