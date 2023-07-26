@@ -1,5 +1,5 @@
 docker_setup () {
-    yum remove docker \
+    yum remove -y docker \
                docker-client \
                docker-client-latest \
                docker-common \
@@ -17,7 +17,7 @@ docker_setup () {
 
     yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 
-    yum install docker-ce docker-ce-cli containerd.io
+    yum install docker-ce docker-ce-cli containerd.io -y
 
     systemctl start docker
 
