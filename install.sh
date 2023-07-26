@@ -1,4 +1,4 @@
-docker () {
+docker_setup () {
     yum remove docker \
                docker-client \
                docker-client-latest \
