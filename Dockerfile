@@ -1,4 +1,4 @@
-FROM centos:8
+FROM registry.access.redhat.com/ubi8/ubi:8.8
 RUN yum install nginx -y
 RUN yum install mysql-server -y
 RUN yum install https://rpms.remirepo.net/enterprise/remi-release-8.rpm
