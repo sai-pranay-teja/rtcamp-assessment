@@ -4,6 +4,7 @@ status_check () {
     then
       echo All the tools have been installed
     else
+      echo Installing tools
       docker
     fi
 }
