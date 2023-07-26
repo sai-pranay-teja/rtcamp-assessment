@@ -13,7 +13,7 @@ docker(){
 
     rm -rf /var/lib/docker/*
 
-    yum install -y yum-utils
+    yum install -y yum-utils device-mapper-persistent-data lvm2
 
     yum-config-manager --add-repo https://download.docker.com/linux/rhel/docker-ce.repo
 
