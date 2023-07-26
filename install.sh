@@ -1,14 +1,5 @@
 docker_setup () {
-    yum remove -y docker \
-               docker-client \
-               docker-client-latest \
-               docker-common \
-               docker-latest \
-               docker-latest-logrotate \
-               docker-logrotate \
-               docker-engine \
-               podman \
-               runc
+    yum remove docker-ce -y
 
 
     rm -rf /var/lib/docker/*
