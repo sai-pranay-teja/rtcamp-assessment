@@ -1,4 +1,4 @@
-until mariadb -u root -ppassword -e -h db.local ping; do
+until mariadb -uroot -p123 -e -h db.local ping; do
    echo "$(date) - waiting for mysql"
    sleep 3
 done
