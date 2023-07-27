@@ -1,3 +1,2 @@
 FROM mariadb:latest
-COPY files/run.sh /
-ENTRYPOINT [ "bash", "/run.sh" ]
+RUN "${mysql[@]}" -e "CREATE DATABASE wordpress_db;"
