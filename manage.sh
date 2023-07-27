@@ -5,3 +5,5 @@ if [ $1 = "start"]; then
 
 
 
+if [ $2 = "load" ]; then
+    bash mariadb/files/run.sh
