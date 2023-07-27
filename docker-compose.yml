@@ -22,4 +22,5 @@ services:
     restart: always
     privileged: true
     #command: systemctl start php-fpm
-    entrypoint: /bin/bash
+    stdin_open: true
+    command: bash

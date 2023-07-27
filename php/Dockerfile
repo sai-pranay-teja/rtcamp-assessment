@@ -13,4 +13,4 @@ RUN dnf install php php-mysqlnd php-pdo php-gd php-mbstring php-fpm -y
 
 
 
-
+# CMD
