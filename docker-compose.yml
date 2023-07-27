@@ -15,6 +15,9 @@ services:
     container_name: nginx
     image: pranayroot/nginx:v1
     restart: always
+    privileged: true 
+    stdin_open: true
+    command: bash
     ports:
       - 80
 
