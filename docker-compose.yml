@@ -35,6 +35,4 @@ services:
 
 
 networks:
-  default:
-    external:
-      name: db-net
+  db-net: {}
