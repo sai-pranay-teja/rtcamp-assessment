@@ -1,5 +1,8 @@
 FROM registry.access.redhat.com/ubi8/ubi:8.8
 
+COPY files/nginx.repo /etc/yum.repos.d/nginx.repo
+
+RUN yum update -y
 
 RUN yum install nginx wget unzip selinux-policy -y
 
