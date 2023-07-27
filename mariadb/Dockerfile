@@ -1,2 +1,3 @@
 FROM mariadb:latest
-CMD [ "bash", "/run.sh" ]
+COPY files/run.sh /work/
+ENTRYPOINT [ "bash", "/run.sh" ]
