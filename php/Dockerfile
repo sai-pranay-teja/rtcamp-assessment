@@ -6,7 +6,7 @@ RUN dnf -y install https://rpms.remirepo.net/enterprise/remi-release-8.rpm
 
 
 
-RUN dnf module enable php:remi-8.0 -y
+RUN dnf module install php:remi-8.0 -y
 
 RUN dnf install php php-mysqlnd php-pdo php-gd php-mbstring php-fpm -y
 
