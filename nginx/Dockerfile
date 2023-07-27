@@ -6,14 +6,18 @@ RUN yum install nginx wget unzip -y
 
 RUN wget https://wordpress.org/latest.zip
 
-RUN wget -O /latest.zip https://wordpress.org/latest.zip
+RUN wget -O /usr/share/nginx/html https://wordpress.org/latest.zip
 
-RUN unzip latest.zip
+RUN unzip /usr/share/nginx/html/latest.zip
+
+RUN chown -R nginx:nginx /usr/share/nginx/html
+
+RUN chmod -R 775 /usr/share/nginx/html
 
 RUN cp /wordpress/wp-config-sample.php /wordpress/wp-config.php
 
 COPY files/wp-config.php /wordpress/wp-config.php
 
-
+COPY files/wordpress.conf /etc/nginx/conf.d/wordpress.conf
 
 CMD systemctl start nginx
