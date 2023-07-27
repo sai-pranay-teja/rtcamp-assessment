@@ -1,6 +1,6 @@
 FROM nginx
 
-RUN sudo yum install wget unzip -y
+RUN yum install wget unzip -y
 
 
 RUN wget https://wordpress.org/latest.zip
