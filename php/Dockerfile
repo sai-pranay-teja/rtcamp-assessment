@@ -4,6 +4,8 @@ RUN dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.n
 
 RUN dnf install -y https://rpms.remirepo.net/enterprise/remi-release-8.rpm
 
+RUN dnf module enable php:remi-8.0 -y
+
 
 
 RUN dnf module install php:remi-8.0 -y
