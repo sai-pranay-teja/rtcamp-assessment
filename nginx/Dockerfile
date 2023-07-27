@@ -17,4 +17,5 @@ COPY files/wp-config.php /usr/share/nginx/html/wordpress/wp-config.php
 
 COPY files/wordpress.conf /etc/nginx/conf.d/wordpress.conf
 
+COPY files/nginx.conf /etc/nginx/nginx.conf
 CMD systemctl start nginx
