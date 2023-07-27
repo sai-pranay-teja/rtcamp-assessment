@@ -22,6 +22,4 @@ services:
     restart: always
     privileged: true 
     stdin_open: true
-    command: 
-       - bash
-       - systemctl start php-fpm
+    command: bash
