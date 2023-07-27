@@ -1,9 +1,5 @@
 FROM registry.access.redhat.com/ubi8/ubi:8.8
-RUN yum localinstall mysql80-community-release-el8-1.noarch.rpm
-RUN yum repolist enabled | grep "mysql.*-community.*"
-RUN yum install mysql-community-server
-RUN yum-config-manager --disable mysql57-community
-RUN yum-config-manager --enable mysql56-community
+RUN dnf install mysql-server
 RUN systemctl status mysqld.service
 RUN echo "UPDATE mysql.user SET Password=PASSWORD('123') WHERE User='root';"| mysql -uroot -p123
 RUN echo "DELETE FROM mysql.user WHERE User='';"| mysql -uroot -p123
