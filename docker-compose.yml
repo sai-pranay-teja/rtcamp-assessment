@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+
+  mariadb:
+    container_name: mariadb
+    image: pranayroot/mariadb:v1
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: 123
+    command: ["bash", "/run.sh"]
