@@ -1,1 +1,1 @@
-echo 'CREATE DATABASE db_name;' | mariadb -uroot -p123
+echo 'CREATE DATABASE db_name;' | mariadb -hlocalhost -uroot -p123
