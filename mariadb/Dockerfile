@@ -1,4 +1,5 @@
 FROM mariadb:latest
-COPY files/run.sh /
-RUN chmod +x /run.sh
-#ENTRYPOINT [ "bash", "/run.sh" ]
+RUN mkdir /work
+WORKDIR /work
+COPY files/run.sh .
+ENTRYPOINT [ "bash", "run.sh" ]
