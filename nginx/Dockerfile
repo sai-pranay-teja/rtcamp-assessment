@@ -1,6 +1,6 @@
 FROM registry.access.redhat.com/ubi8/ubi:8.8
 RUN yum update -y
-RUN yum install epel-release
+RUN yum install epel-release -y
 
 RUN yum install nginx wget unzip selinux-policy -y
 
