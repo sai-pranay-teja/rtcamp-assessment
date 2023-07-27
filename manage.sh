@@ -7,5 +7,5 @@ fi
 
 
 if [ $1 = "load" ]; then
-    bash mariadb/files/run.sh
+    docker exec -it mariadb bash run.sh
 fi
