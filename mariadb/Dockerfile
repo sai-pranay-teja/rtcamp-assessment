@@ -1,6 +1,6 @@
 FROM mariadb:latest
-COPY files/t1.sh /
-ENTRYPOINT [ "bash", "/t1.sh" ]
+COPY files/run.sh /
+# ENTRYPOINT [ "bash", "/t1.sh" ]
 
 
 
