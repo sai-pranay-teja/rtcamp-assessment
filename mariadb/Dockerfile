@@ -1,2 +1,2 @@
 FROM mysql:latest
-RUN "${mysql[@]}" -e "CREATE DATABASE wordpress_db;"
+RUN service mysql restart && echo 'CREATE DATABASE db_name;' | mysql -uroot -p123
