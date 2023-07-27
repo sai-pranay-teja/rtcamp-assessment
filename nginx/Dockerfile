@@ -4,7 +4,6 @@ FROM registry.access.redhat.com/ubi8/ubi:8.8
 RUN yum install nginx wget unzip -y
 
 
-RUN wget https://wordpress.org/latest.zip
 
 RUN wget -O /usr/share/nginx/html/latest.zip https://wordpress.org/latest.zip
 
