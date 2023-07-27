@@ -7,7 +7,7 @@ RUN yum install nginx wget unzip -y
 
 RUN wget -O /usr/share/nginx/html/latest.zip https://wordpress.org/latest.zip
 
-RUN unzip /usr/share/nginx/html/latest.zip
+RUN unzip /usr/share/nginx/html/latest.zip -d /usr/share/nginx/html
 
 RUN chown -R nginx:nginx /usr/share/nginx/html
 
