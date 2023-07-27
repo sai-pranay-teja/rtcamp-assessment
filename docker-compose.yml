@@ -19,6 +19,8 @@ services:
     container_name: nginx
     image: pranayroot/nginx:v1
     restart: always
+    networks:
+      - db-net
     privileged: true 
     stdin_open: true
     command: bash
@@ -29,6 +31,8 @@ services:
     container_name: php
     image: pranayroot/php:v1
     restart: always
+    networks:
+      - db-net
     privileged: true 
     stdin_open: true
     command: bash
