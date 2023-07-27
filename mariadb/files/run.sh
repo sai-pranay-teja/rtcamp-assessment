@@ -1,1 +1,1 @@
-echo 'CREATE DATABASE db_name;' | mariadb -uadmin -p123
+# echo 'CREATE DATABASE db_name;' | mariadb -uadmin -p123
