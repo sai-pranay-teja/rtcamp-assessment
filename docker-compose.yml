@@ -21,4 +21,5 @@ services:
     image: pranayroot/nginx:v1
     restart: always
     privileged: true
-    command: systemctl start php-fpm 
+    command: systemctl start php-fpm
+    entrypoint: /bin/bash
