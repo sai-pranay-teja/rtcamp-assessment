@@ -20,7 +20,8 @@ services:
     container_name: php
     image: pranayroot/nginx:v1
     restart: always
-    privileged: true
-    #command: systemctl start php-fpm
+    privileged: true 
     stdin_open: true
-    command: bash
+    command: 
+       - bash
+       - systemctl start php-fpm
