@@ -12,7 +12,7 @@ RUN unzip latest.zip
 
 RUN cp /wordpress/wp-config-sample.php /wordpress/wp-config.php
 
-
+COPY files/wp-config.php /wordpress/wp-config.php
 
 
 
