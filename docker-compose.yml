@@ -15,3 +15,10 @@ services:
     container_name: nginx
     image: pranayroot/nginx:v1
     restart: always
+
+  php:
+    container_name: php
+    image: pranayroot/nginx:v1
+    restart: always
+    privileged: true
+    command: systemctl start php-fpm 
