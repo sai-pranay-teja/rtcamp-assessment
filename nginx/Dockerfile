@@ -13,8 +13,6 @@ RUN chown -R nginx:nginx /usr/share/nginx/html
 
 RUN chmod -R 775 /usr/share/nginx/html
 
-RUN cp /wordpress/wp-config-sample.php /wordpress/wp-config.php
-
 COPY files/wp-config.php /wordpress/wp-config.php
 
 COPY files/wordpress.conf /etc/nginx/conf.d/wordpress.conf
