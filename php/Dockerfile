@@ -11,6 +11,6 @@ RUN dnf module enable php:remi-8.0 -y
 
 RUN dnf install php php-mysqlnd php-pdo php-gd php-mbstring php-fpm -y
 
-RUN systemctl start php-fpm
+RUN service php-fpm start 
 
 
