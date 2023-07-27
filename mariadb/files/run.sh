@@ -1,4 +1,4 @@
-until mariadb -uroot -p123 -e -h db.local ping; do
+until sudo mysqladmin -uroot -p123  ping; do
    echo "$(date) - waiting for mysql"
    sleep 3
 done
