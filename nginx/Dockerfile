@@ -1,7 +1,7 @@
 FROM registry.access.redhat.com/ubi8/ubi:8.8
 
 
-RUN yum install nginx wget unzip -y
+RUN yum install nginx wget unzip selinux-policy -y
 
 
 
@@ -18,4 +18,6 @@ COPY files/wp-config.php /usr/share/nginx/html/wordpress/wp-config.php
 COPY files/wordpress.conf /etc/nginx/conf.d/wordpress.conf
 
 COPY files/nginx.conf /etc/nginx/nginx.conf
+
+COPY files/config /etc/selinux/config
 CMD systemctl start nginx

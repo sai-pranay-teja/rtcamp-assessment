@@ -8,4 +8,5 @@ fi
 
 if [ $1 = "load" ]; then
     docker exec -it mariadb bash run.sh
+    docker restart mariadb
 fi
