@@ -7,7 +7,7 @@
 # Pull base image.
 FROM ubuntu:latest
 
-# Install MySQL.
+
 RUN \
   apt-get update && \
   DEBIAN_FRONTEND=noninteractive apt-get install -y mysql-server && \
