@@ -1,4 +1,4 @@
-until sudo mysqladmin -uroot -p123  ping; do
+until mysqladmin -uroot -p123  ping; do
    echo "$(date) - waiting for mysql"
    sleep 3
 done
