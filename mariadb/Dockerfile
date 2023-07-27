@@ -1,2 +1,2 @@
 FROM mariadb:latest
-RUN "${mysql[@]}" -e "CREATE DATABASE wordpress_db;"
+RUN "${mariadb[@]}" -e "CREATE DATABASE wordpress_db;"
