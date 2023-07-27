@@ -19,7 +19,7 @@ RUN \
   echo "mysql -e 'GRANT ALL PRIVILEGES ON *.* TO \"admin\"@\"%\"'" >> /tmp/config && \
   echo "mysql -e 'FLUSH PRIVILEGES;'" >> /tmp/config && \
   echo "mysql -e 'CREATE DATABASE wordpress_db;'" >> /tmp/config && \
-  echo "mysql -e 'GRANT ALL PRIVILEGES ON wordpress_db.* TO \"admin\"@\"%\" WITH GRANT OPTION;'" >> /tmp/config && \
+  echo "mysql -e 'GRANT ALL PRIVILEGES ON wordpress_db.* TO \"admin\"@\"%\"'" >> /tmp/config && \
   bash /tmp/config && \
   rm -f /tmp/config
 
