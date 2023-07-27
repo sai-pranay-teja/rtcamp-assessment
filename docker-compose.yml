@@ -11,3 +11,7 @@ services:
       MARIADB_PASSWORD: 123 
       MARIADB_ROOT_PASSWORD: 123
     
+  nginx:
+    container_name: mariadb
+    image: pranayroot/nginx:v1
+    restart: always
