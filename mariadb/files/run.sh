@@ -1,4 +1,4 @@
-sleep 6
+
 
 
 echo "grant all privileges on *.* to 'admin'@'%' IDENTIFIED BY '123';"| mariadb -uroot -p123
