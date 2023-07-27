@@ -18,7 +18,7 @@ services:
 
   php:
     container_name: php
-    image: pranayroot/nginx:v1
+    image: pranayroot/php:v1
     restart: always
     privileged: true 
     stdin_open: true
