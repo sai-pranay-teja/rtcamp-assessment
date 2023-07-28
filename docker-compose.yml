@@ -69,6 +69,7 @@ services:
     networks:
       - db-net
 networks:
-  db-net:
+  db-net: {}
 volumes:
   db_data:
+    external: true
