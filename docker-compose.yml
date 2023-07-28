@@ -3,6 +3,7 @@ version: '3.5'
 services:
   #databse
   db:
+    container_name: mysql
     image: mysql:5.7
     volumes:
       - db_data:/var/lib/mysql
@@ -16,6 +17,7 @@ services:
       - db-net
   #php
   phpfpm:
+    container_name: phpfpm
     image: php:fpm
     depends_on:
       - db
@@ -26,6 +28,7 @@ services:
       - db-net
   #phpmyadmin
   phpmyadmin:
+    container_name: phpmyadmin
     depends_on:
       - db
     image: phpmyadmin/phpmyadmin
@@ -39,6 +42,7 @@ services:
       - db-net
   #wordpress
   wordpress:
+    container_name: wordpress
     depends_on: 
       - db
     image: wordpress:latest
@@ -55,6 +59,7 @@ services:
       - db-net
   #nginx
   proxy:
+    container_name: nginx
     image: nginx:1.17.10
     depends_on:
       - db
