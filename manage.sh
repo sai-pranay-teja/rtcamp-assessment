@@ -6,7 +6,7 @@ fi
 mkdir wordpress-docker
 cd wordpress-docker
 mkdir public nginx
-mv ./default.conf nginx/default.conf
+mv /home/ec2-user/rtcamp-assessment/default.conf nginx/default.conf
 
 
 if [ $1 = "start" ]; then
