@@ -11,13 +11,11 @@
 #     docker restart mariadb
 # fi
 
-DIR="/home/ec2-user/rtcamp-assessment/WordPress"
-if [ ! -d "$DIR" ]; then
-  git clone https://github.com/WordPress/WordPress
-  
-fi
-
-
-cd WordPress
-
-docker build -t pranayroot/lemp:v1 /home/ec2-user/rtcamp-assessment/lemp_stack/
+DIR="/home/ec2-user/rtcamp-assessment"
+#creating required files
+mkdir wordpress-docker
+cd wordpress-docker
+# Creating public and nginx
+echo "Creating nginx configuration file"
+mkdir public nginx
+cp ${DIR}/lemp_stack/files/default.conf ${DIR}/nginx/default.conf

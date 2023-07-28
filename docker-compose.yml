@@ -1,62 +1,72 @@
-version: '3.4'
-
 services:
-
-  lemp:
-    container_name: lemp
-    image: pranayroot/lemp:v1
+  #databse
+  db:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
     restart: always
-    networks:
-      - db-net
-    volumes: 
-      - /home/ec2-user/rtcamp-assessment/WordPress:/var/www/localhost/htdocs
-    ports:
-      - 80:80
-  
-
-
-  mysql:
-    container_name: mysql
-    image: mysql:latest
-    restart: always
-    networks:
-      - db-net
     environment:
-      MYSQL_DATABASE: wordpress_db
+      MYSQL_DATABASE: wordpress
       MYSQL_USER: admin
-      MYSQL_PASSWORD: 123 
+      MYSQL_PASSWORD: 123
       MYSQL_ROOT_PASSWORD: 123
+    networks:
+      - db-net
+  #php
+  phpfpm:
+    image: php:fpm
+    depends_on:
+      - db
     ports:
-      - 3306:3306
-
-#   nginx:
-#     container_name: nginx
-#     image: pranayroot/nginx:v1
-#     restart: always
-#     networks:
-#       - db-net
-#     privileged: true 
-#     stdin_open: true
-#     command: bash
-#     ports:
-#       - 80:80
-
-#   php:
-#     container_name: php
-#     image: pranayroot/php:v1
-#     restart: always
-#     networks:
-#       - db-net
-#     privileged: true 
-#     stdin_open: true
-#     command: bash
-#     ports:
-#       - 9000:9000
-
-
+      - '9000:9000'
+    volumes: ['./public:/usr/share/nginx/html']
+    networks:
+      - db-net
+  #phpmyadmin
+  phpmyadmin:
+    depends_on:
+      - db
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - '8080:80'
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: password
+    networks:
+      - db-net
+  #wordpress
+  wordpress:
+    depends_on: 
+      - db
+    image: wordpress:latest
+    restart: always
+    ports:
+      - '8000:80'
+    volumes: ['./:/var/www/html']
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: admin
+      WORDPRESS_DB_PASSWORD: 123
+      WORDPRESS_DB_NAME: wordpress
+    networks:
+      - db-net
+  #nginx
+  proxy:
+    image: nginx:1.17.10
+    depends_on:
+      - db
+      - wordpress
+      - phpmyadmin
+      - phpfpm
+    ports:
+      - '8001:80'
+    volumes: 
+      - ./:/var/www/html
+      - ./nginx/default.conf:/etc/nginx/nginx.conf
+    networks:
+      - db-net
 networks:
-  db-net: {}
-
-
-
-
+  db-net:
+volumes:
+  db_data:
