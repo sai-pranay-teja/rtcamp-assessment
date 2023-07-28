@@ -64,7 +64,7 @@ services:
     ports:
       - '8001:80'
     volumes: 
-      - ./:/var/www/html
+      - /home/ec2-user/rtcamp-assessment/wordpress-docker/:/var/www/html
       - /home/ec2-user/rtcamp-assessment/wordpress-docker/nginx/:/etc/nginx/
     networks:
       - db-net
