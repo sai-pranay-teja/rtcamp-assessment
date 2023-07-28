@@ -1,5 +1,9 @@
-DIR="/home/ec2-user/rtcamp-assessment/wordpress-docker"
-DIR="${DIR:-"/home/pranay/rtcamp-assessment/wordpress-docker"}"
+if [ -d "/home/ec2-user/rtcamp-assessment/wordpress-docker" ]; then
+   DIR="/home/ec2-user/rtcamp-assessment/wordpress-docker"
+else
+   DIR="/home/pranay/rtcamp-assessment/wordpress-docker"
+fi
+
 if [ ! -d "$DIR" ]; then
     mkdir  /home/ec2-user/rtcamp-assessment/wordpress-docker || mkdir /home/pranay/rtcamp-assessment/wordpress-docker
     mkdir wordpress-docker
