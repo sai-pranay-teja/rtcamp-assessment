@@ -1,12 +1,13 @@
 DIR="/home/ec2-user/rtcamp-assessment/wordpress-docker"
 if [ ! -d "$DIR" ]; then
-   mkdir  /home/ec2-user/rtcamp-assessment/wordpress-docker
+    mkdir  /home/ec2-user/rtcamp-assessment/wordpress-docker
+    mkdir wordpress-docker
+    cd wordpress-docker
+    mkdir public nginx
+    mv /home/ec2-user/rtcamp-assessment/default.conf nginx/default.conf
 fi
 
-mkdir wordpress-docker
-cd wordpress-docker
-mkdir public nginx
-mv /home/ec2-user/rtcamp-assessment/default.conf nginx/default.conf
+
 
 
 if [ $1 = "start" ]; then
