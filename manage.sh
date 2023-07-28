@@ -20,4 +20,4 @@ fi
 
 cd WordPress
 
-docker build -t pranayroot/lemp:v1 ~/lemp_stack
+docker build -t pranayroot/lemp:v1 /home/ec2-user/rtcamp-assessment/lemp_stack/
