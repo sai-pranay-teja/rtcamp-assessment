@@ -9,7 +9,7 @@ services:
     networks:
       - db-net
     volumes: 
-      - $PWD:/var/www/localhost/htdocs
+      - /home/ec2-user/rtcamp-assessment/WordPress:/var/www/localhost/htdocs
     ports:
       - 80:80
   
