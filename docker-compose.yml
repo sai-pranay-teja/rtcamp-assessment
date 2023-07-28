@@ -59,7 +59,7 @@ services:
     depends_on:
       - db
       - wordpress
-    #  - phpmyadmin
+      - phpmyadmin
       - phpfpm
     ports:
       - '8001:80'
