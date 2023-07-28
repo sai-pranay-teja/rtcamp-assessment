@@ -19,7 +19,7 @@ services:
       - db
     ports:
       - '9000:9000'
-    volumes: ['./public:/usr/share/nginx/html']
+    volumes: ['/home/ec2-user/rtcamp-assessment/wordpress-docker/public:/usr/share/nginx/html']
     networks:
       - db-net
   #phpmyadmin
@@ -43,7 +43,7 @@ services:
     restart: always
     ports:
       - '8000:80'
-    volumes: ['./:/var/www/html']
+    volumes: ['/home/ec2-user/rtcamp-assessment/wordpress-docker:/var/www/html']
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: admin
@@ -63,7 +63,7 @@ services:
       - '8001:80'
     volumes: 
       - ./:/var/www/html
-      - ./nginx/default.conf:/etc/nginx/nginx.conf
+      - /home/ec2-user/rtcamp-assessment/wordpress-docker/nginx/default.conf:/etc/nginx/nginx.conf
     networks:
       - db-net
 networks:
