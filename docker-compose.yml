@@ -2,43 +2,61 @@ version: '3.4'
 
 services:
 
-  mariadb:
-    container_name: mariadb
-    image: pranayroot/mariadb:v1
+  lemp:
+    container_name: lemp
+    image: pranayroot/lemp:v1
+    restart: always
+    networks:
+      - db-net
+    volumes: 
+      - $PWD:/var/www/localhost/htdocs
+    ports:
+      - 80:80
+  
+
+
+  mysql:
+    container_name: mysql
+    image: mysql:latest
     restart: always
     networks:
       - db-net
     environment:
-      MARIADB_USER: admin
-      MARIADB_PASSWORD: 123 
-      MARIADB_ROOT_PASSWORD: 123
+      MYSQL_DATABASE: wordpress_db
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: 123 
+      MYSQL_ROOT_PASSWORD: 123
     ports:
       - 3306:3306
-    
-  nginx:
-    container_name: nginx
-    image: pranayroot/nginx:v1
-    restart: always
-    networks:
-      - db-net
-    privileged: true 
-    stdin_open: true
-    command: bash
-    ports:
-      - 80:80
 
-  php:
-    container_name: php
-    image: pranayroot/php:v1
-    restart: always
-    networks:
-      - db-net
-    privileged: true 
-    stdin_open: true
-    command: bash
-    ports:
-      - 9000:9000
+#   nginx:
+#     container_name: nginx
+#     image: pranayroot/nginx:v1
+#     restart: always
+#     networks:
+#       - db-net
+#     privileged: true 
+#     stdin_open: true
+#     command: bash
+#     ports:
+#       - 80:80
+
+#   php:
+#     container_name: php
+#     image: pranayroot/php:v1
+#     restart: always
+#     networks:
+#       - db-net
+#     privileged: true 
+#     stdin_open: true
+#     command: bash
+#     ports:
+#       - 9000:9000
 
 
 networks:
   db-net: {}
+
+
+
+
