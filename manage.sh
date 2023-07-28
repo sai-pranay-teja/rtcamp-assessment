@@ -1,3 +1,8 @@
+DIR="/home/ec2-user/rtcamp-assessment/wordpress-docker"
+if [ ! -d "$DIR" ]; then
+   mkdir  /home/ec2-user/rtcamp-assessment/wordpress-docker
+fi
+
 mkdir wordpress-docker
 cd wordpress-docker
 mkdir public nginx
