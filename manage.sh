@@ -11,8 +11,13 @@
 #     docker restart mariadb
 # fi
 
-git clone https://github.com/WordPress/WordPress
+DIR="/home/ec2-user/rtcamp-assessment/WordPress"
+if [ ! -d "$DIR" ]; then
+  git clone https://github.com/WordPress/WordPress
+  
+fi
+
 
 cd WordPress
 
-docker build -t pranayroot/lemp:v1 .
+docker build -t pranayroot/lemp:v1 ~/lemp_stack
